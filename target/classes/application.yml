@@ -1,0 +1,18 @@
+server:
+  port: 8081
+zlf:
+  hello:
+    prefix: welcome
+    suffix: to mystarter
+aliyun:
+  endpoint: http://oss-cn-hangzhou.aliyuncs.com
+  accessKeySecret: fSFzUWC1OL180g1auLSwCQU4IefSDL
+  accessKeyId: LTAI4Fq9vFPfQpXth9ZaqbYX
+  bucketName: bucket-zlf
+#cos:
+#  secretId: AKIDoV14zkOj4GI8nLEvvoW4QgpmbFlNECA1
+#  secretKey: pT1ueEhJxVtupbCbt14weFgvy8D8i5LR
+#  region: ap-beijing
+#  bucketName: bucket-zlf-1258250484
+#fdfs:
+#  tracker_servers: 192.168.0.1:22122
