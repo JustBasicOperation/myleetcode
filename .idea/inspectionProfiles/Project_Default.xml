@@ -49,7 +49,7 @@
     <inspection_tool class="JdAvoidStartWithDollarAndUnderLineNaming" enabled="false" level="CRITICAL " enabled_by_default="false" />
     <inspection_tool class="JdAvoidUseTimer" enabled="false" level="BLOCKER " enabled_by_default="false" />
     <inspection_tool class="JdBooleanPropertyShouldNotStartWithIs" enabled="false" level="CRITICAL " enabled_by_default="false" />
-    <inspection_tool class="JdClassCastExceptionWithSubListToArrayList" enabled="true" level="CRITICAL " enabled_by_default="true" />
+    <inspection_tool class="JdClassCastExceptionWithSubListToArrayList" enabled="false" level="CRITICAL " enabled_by_default="false" />
     <inspection_tool class="JdClassCastExceptionWithToArray" enabled="false" level="CRITICAL " enabled_by_default="false" />
     <inspection_tool class="JdClassMustHaveAuthor" enabled="false" level="MAJOR " enabled_by_default="false" />
     <inspection_tool class="JdClassNamingShouldBeCamel" enabled="false" level="MAJOR " enabled_by_default="false" />
