@@ -1,5 +1,6 @@
 package com.zlfjw.service;
 
+import com.zlfjw.constant.ListNode;
 import com.zlfjw.main.Solution;
 import org.junit.Test;
 
@@ -65,8 +66,8 @@ public class LeetCodeTest {
 
     @Test
     public void test8(){
-        boolean aa = Solution.isMatchplus("aaa", "aa*");
-        System.out.println(aa);
+//        boolean aa = Solution.isMatchplus("aaa", "aa*");
+//        System.out.println(aa);
     }
 
     @Test
@@ -118,4 +119,47 @@ public class LeetCodeTest {
         int i = Solution.mySqrtPlus(2147395599);
         System.out.println(i);
     }
+
+    @Test
+    public void test16(){
+        int n = 4;
+        String[] strs = new String[]{"aaa","bcdef","cde","zzz"};
+        Solution.longestMelody(n,strs);
+    }
+
+    @Test
+    public void test17(){
+        int n = 5;
+        String[] strs = new String[]{"aaa","bcdef","ij","jk","zzz"};
+        Solution.myLongestMelody(n,strs);
+    }
+
+    @Test
+    public void test18(){
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
+        for (int i = 1;i < 6;i++){
+            ListNode newNode = new ListNode(i);
+            tail.next = newNode;
+            tail = newNode;
+        }
+        ListNode listNode = Solution.reverseList_recusion(head);
+        while (listNode != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
+    }
+
+    @Test
+    public void test19(){
+        int i = Solution.longestNums(new int[]{2, 2, 2, 2,});
+        System.out.println(i);
+    }
+
+    @Test
+    public void test20(){
+        int i = Solution.minDistance("a", "b");
+        System.out.println(i);
+    }
+
 }
