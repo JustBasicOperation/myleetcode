@@ -10,4 +10,11 @@ public class DynamicProgramTest {
         DynamicProgram.knapsack(array,100);
     }
 
+    @Test
+    public void test02(){
+        String text1 = "abcde";
+        String text2 = "ace";
+        int i = DynamicProgram.longestCommonSubsequence(text1, text2);
+        System.out.println(i);
+    }
 }
