@@ -133,4 +133,29 @@ public class DynamicProgram {
         }
         return dp[len1][len2];
     }
+
+    //152.乘积最大子数组
+    public static int maxProduct(int[] nums) {
+        int len = nums.length;
+        if(len == 0 || len == 1){
+            return len == 0 ? 0 : nums[0];
+        }
+        //dp[i]表示前i个元素中的最大连续子数组乘积
+        int[] dp = new int[len];
+        dp[0] = nums[0];
+        int max = nums[0],min = nums[0];
+        for(int i = 1;i < len;i++){
+            if(nums[i] < 0){
+                int temp = max;
+                max = min;
+                min = temp;
+            }
+            max = Math.max(nums[i]*max,nums[i]);
+            min = Math.min(nums[i]*min,nums[i]);
+            dp[i] = Math.max(max,dp[i-1]);
+        }
+        return dp[len-1];
+    }
+
+
 }
