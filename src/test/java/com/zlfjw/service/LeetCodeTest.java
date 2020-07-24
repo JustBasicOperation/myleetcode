@@ -162,4 +162,24 @@ public class LeetCodeTest {
         System.out.println(i);
     }
 
+    @Test
+    public void test21(){
+        ListNode l1 = new ListNode(1);
+        ListNode tail1 = l1;
+//        tail1.next = new ListNode(4);
+//        tail1 = tail1.next;
+//        tail1.next = new ListNode(3);
+
+        ListNode l2 = new ListNode(9);
+        ListNode tail2 = l2;
+        tail2.next = new ListNode(9);
+//        tail2 = tail2.next;
+//        tail2.next = new ListNode(6);
+
+        Solution.addTwoNumbers(l1,l2);
+    }
+
+    public static void main(String[] args) {
+        Solution.eatCake();
+    }
 }
