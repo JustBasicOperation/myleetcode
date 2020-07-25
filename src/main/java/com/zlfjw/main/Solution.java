@@ -2,6 +2,7 @@ package com.zlfjw.main;
 
 
 import com.zlfjw.constant.ListNode;
+import com.zlfjw.constant.TreeNode;
 
 import java.util.*;
 
@@ -1741,20 +1742,63 @@ public class Solution {
         for(int i = 0;i < n;i++){
             nums[i] = in.nextInt();
         }
-        for (int i = 0;i < n;i++){
-            if(nums[i] > 1){
-                dp[i] = nums[i] - 1;
-            }else if(nums[i] == 1){
-                continue;
-            }else{
-                break;
-            }
+        dp[0] = nums[0];
+        for (int i = 1;i < n;i++){
+            dp[i] = Math.min(dp[i-1],nums[i]);
         }
         int sum = 0;
         for(int i = 0;i < n;i++){
             sum += dp[i];
         }
-        System.out.println(sum + 1);
+        System.out.println(sum);
+    }
+
+    //二叉树的先序遍历(非递归版)
+    public static void inorder(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode pop = stack.pop();
+            if (pop == null){
+                continue;
+            }
+            System.out.println(pop.val);
+            stack.push(pop.right);
+            stack.push(pop.left);
+        }
+    }
+
+    //二叉树的后序遍历
+    public static void postOrder(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        List<Integer> res = new ArrayList<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode pop = stack.pop();
+            if (pop == null){
+                continue;
+            }
+            res.add(pop.val);
+            stack.push(pop.left);
+            stack.push(pop.right);
+        }
+        Collections.reverse(res);
+    }
+
+    //二叉树的中序遍历
+    public void midOrder(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()){
+            //先将根节点的左孩子全部入栈
+            while (node != null){
+                stack.push(node.left);
+                node = node.left;
+            }
+            TreeNode pop = stack.pop();
+            System.out.println(pop.val);
+            node = pop.right;
+        }
     }
 }
 
