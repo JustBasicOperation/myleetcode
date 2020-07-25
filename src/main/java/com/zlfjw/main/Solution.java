@@ -1674,7 +1674,87 @@ public class Solution {
         return dp[len1][len2];
     }
 
-    //10.正则表达式匹配
+    //两数相加
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode l3 = new ListNode(0);
+        ListNode tail = l3;
+        int carry = 0;
+        while(l1 != null && l2 != null){
+            int sum = l1.val + l2.val + carry;
+            if(sum > 9){
+                carry = 1;
+                tail.next = new ListNode(sum%10);
+            }else{
+                tail.next = new ListNode(sum);
+                carry = 0;
+            }
+            l1 = l1.next;
+            l2 = l2.next;
+            tail = tail.next;
+        }
+        while(l1 != null){
+            int val = l1.val + carry;
+            if(val > 9){
+                tail.next = new ListNode(val%10);
+                carry = 1;
+            }else{
+                tail.next = new ListNode(val);
+                carry = 0;
+            }
+            l1 = l1.next;
+            tail = tail.next;
+        }
+        while(l2 != null){
+            int val = l2.val + carry;
+            if(val > 9){
+                tail.next = new ListNode(val % 10);
+                carry = 1;
+            }else{
+                tail.next = new ListNode(val);
+                carry = 0;
+            }
+            l2 = l2.next;
+            tail = tail.next;
+        }
+        if(carry == 1){
+            tail.next = new ListNode(carry);
+        }
+        return l3.next;
+    }
 
+    //7.24阿里笔试第一题
+    /**
+     *
+     * 1. 吃烧饼，有n个盘子和每个盘子的烧饼数，每次选一个x(x <= n)，吃掉第1~x号盘子的一个烧饼，若第1~x号盘子中有空盘，则不能选择这个x。 假设胃无限大，问最多可以吃多少烧饼。
+     * 样例：
+     * 输入
+     * 3
+     * 2 1 3
+     * 输出：
+     * 4
+     */
+    public static void eatCake(){
+            Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] nums = new int[n];
+        int[] dp = new int[n];
+        for(int i = 0;i < n;i++){
+            nums[i] = in.nextInt();
+        }
+        for (int i = 0;i < n;i++){
+            if(nums[i] > 1){
+                dp[i] = nums[i] - 1;
+            }else if(nums[i] == 1){
+                continue;
+            }else{
+                break;
+            }
+        }
+        int sum = 0;
+        for(int i = 0;i < n;i++){
+            sum += dp[i];
+        }
+        System.out.println(sum + 1);
+    }
 }
 
