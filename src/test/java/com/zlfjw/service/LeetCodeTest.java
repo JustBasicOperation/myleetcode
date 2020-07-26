@@ -182,4 +182,10 @@ public class LeetCodeTest {
     public static void main(String[] args) {
         Solution.eatCake();
     }
+
+    @Test
+    public void test22(){
+        String s = Solution.longestPalindrome("abcba");
+        System.out.println(s);
+    }
 }
