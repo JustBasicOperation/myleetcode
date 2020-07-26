@@ -1781,7 +1781,7 @@ public class Solution {
     }
 
     //最长回文子串
-    public String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         int len = s.length();
         // 特判
         if (len < 2){
