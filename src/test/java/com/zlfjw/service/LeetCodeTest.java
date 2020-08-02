@@ -2,9 +2,11 @@ package com.zlfjw.service;
 
 import com.zlfjw.constant.ListNode;
 import com.zlfjw.main.Solution;
+import com.zlfjw.written.Main;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * @Author zhaolinfeng3
@@ -180,6 +182,8 @@ public class LeetCodeTest {
     }
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        in.nextInt();
         Solution.eatCake();
     }
 
@@ -187,5 +191,13 @@ public class LeetCodeTest {
     public void test22(){
         String s = Solution.longestPalindrome("abcba");
         System.out.println(s);
+    }
+
+    @Test
+    public void test23(){
+        Main.multi(3,3);
+        int a = (int) (1e9+7);
+        int b = 64865138;
+        System.out.println(b%a);
     }
 }
