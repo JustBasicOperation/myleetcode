@@ -5,6 +5,7 @@ import com.zlfjw.main.Solution;
 import com.zlfjw.written.Main;
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Scanner;
 
@@ -197,7 +198,19 @@ public class LeetCodeTest {
     public void test23(){
         Main.multi(3,3);
         int a = (int) (1e9+7);
-        int b = 64865138;
+        int b = Integer.MAX_VALUE;
         System.out.println(b%a);
+        System.out.println(a);
+    }
+
+    @Test
+    public void test24(){
+//        System.out.println(Integer.MAX_VALUE);
+//        System.out.println(Integer.MIN_VALUE);
+//        System.out.println(Long.MAX_VALUE);
+//        System.out.println(Float.MAX_VALUE);
+//        System.out.println(Double.MAX_VALUE);
+        BigInteger bigInteger = new BigInteger("346816816468484897646454646816468468");
+        System.out.println(bigInteger);
     }
 }
