@@ -6,8 +6,11 @@ import com.zlfjw.written.Main;
 import org.junit.Test;
 
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Author zhaolinfeng3
@@ -213,4 +216,28 @@ public class LeetCodeTest {
         BigInteger bigInteger = new BigInteger("346816816468484897646454646816468468");
         System.out.println(bigInteger);
     }
+
+    @Test
+    public void test25(){
+        int[] nums = new int[]{5,5,10};
+        Map<Integer, Integer> map = new HashMap<>();
+        int sum = 0;
+        for (int i = 0;i < nums.length;i++){
+            if(nums[i] == 5){
+                sum += nums[i];
+            }else if(nums[i] % 5 != 0){
+                System.out.println(false);
+                break;
+            }else{
+                sum += nums[i];
+                if(sum > nums[i] - 5){
+                    sum -= nums[i]-5;
+                }else{
+                    System.out.println(false);
+                }
+            }
+        }
+        System.out.println(true);
+    }
+
 }
