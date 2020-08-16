@@ -1423,7 +1423,7 @@ public class Solution {
     /**
      * 初阶版
      */
-    public  ListNode reverserList(ListNode head){
+    public  static ListNode reverserList(ListNode head){
         ListNode cur = head;
         ListNode pre = null;
         ListNode tmp = null;
@@ -1831,6 +1831,21 @@ public class Solution {
         }
         // 4. 返回值
         return s.substring(begin,begin + maxLen);
+    }
+
+    //反转链表
+    public static ListNode ReverseList(ListNode head) {
+        ListNode cur = head;
+        ListNode pre = null;
+        ListNode tmp = null;
+        while(cur != null){
+            tmp = cur.next;
+            cur.next = pre;
+
+            pre = cur;
+            cur = tmp;
+        }
+        return pre;
     }
 }
 

@@ -240,4 +240,16 @@ public class LeetCodeTest {
         System.out.println(true);
     }
 
+    @Test
+    public void test26(){
+        ListNode root = new ListNode(1);
+        root.next = new ListNode(2);
+        root.next.next = new ListNode(3);
+        ListNode listNode = Solution.reverserList(root);
+        while(listNode != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
+    }
+
 }
