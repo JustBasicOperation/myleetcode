@@ -3,6 +3,7 @@ package com.zlfjw.main;
 
 import com.zlfjw.constant.ListNode;
 import com.zlfjw.constant.TreeNode;
+import sun.reflect.generics.tree.Tree;
 
 import java.util.*;
 
@@ -1846,6 +1847,28 @@ public class Solution {
             cur = tmp;
         }
         return pre;
+    }
+
+    //反转二叉树
+    public static TreeNode reverseTree(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        if(root == null){
+            return null;
+        }
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode pop = stack.pop();
+            TreeNode tmp = pop.left;
+            pop.left = pop.right;
+            pop.right = tmp;
+            if(pop.right!=null){
+                stack.push(pop.right);
+            }
+            if(pop.left != null){
+                stack.push(pop.left);
+            }
+        }
+        return root;
     }
 }
 

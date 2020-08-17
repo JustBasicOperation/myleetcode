@@ -29,3 +29,4 @@ public class Main_04 {
         judge[x][y] = false;
     }
 }
+
