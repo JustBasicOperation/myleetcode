@@ -1870,5 +1870,28 @@ public class Solution {
         }
         return root;
     }
+
+    //最长公共子串
+    /**
+     * 给定两个字符串，找出最长的公共子串
+     * 例：
+     * 输入：adcabcdefa,dsfweabcedf;
+     * 输出：abcdef
+     */
+    public static String lengthiestSubString(String str1,String str2){
+        int row = str1.length();
+        int col = str2.length();
+        int[][] dp = new int[row][col];
+        for(int i = 0;i < row;i++){
+            for(int j = 0;j < col;j++){
+                if(str1.charAt(i) == str2.charAt(j)){
+                    dp[i][j] = 1;
+                }else{
+                    dp[i][j] = -1;
+                }
+            }
+        }
+        return null;
+    }
 }
 

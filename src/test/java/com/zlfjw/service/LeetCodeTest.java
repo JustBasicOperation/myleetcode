@@ -252,4 +252,9 @@ public class LeetCodeTest {
         }
     }
 
+    @Test
+    public void test27(){
+        Solution.lengthiestSubString("adcabcdefa","dsfweabcedf");
+    }
+
 }
