@@ -1893,5 +1893,18 @@ public class Solution {
         }
         return null;
     }
+
+    //二叉树的层序遍历
+    public static void levelOrder(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()){
+            TreeNode poll = queue.poll();
+            System.out.println(poll);
+            queue.offer(poll.left);
+            queue.offer(poll.right);
+        }
+    }
 }
 
