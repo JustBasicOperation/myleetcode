@@ -1,5 +1,6 @@
 package com.zlfjw.main;
 
+import com.zlfjw.constant.RandomListNode;
 import com.zlfjw.constant.TreeNode;
 import org.junit.Test;
 
@@ -13,31 +14,28 @@ public class niuKeTest {
         node.right = new TreeNode(12);
         node.left.left = new TreeNode(4);
         node.left.right = new TreeNode(7);
-        ArrayList<ArrayList<Integer>> arrayLists = NiuKe.FindPath(node, 22);
-        for (int i = 0; i < arrayLists.size(); i++) {
-            for(int j = 0;j < arrayLists.get(i).size();j++){
-                int res = arrayLists.get(i).get(j);
-                System.out.print(res + " ");
-            }
-            System.out.println();
-        }
+        NiuKe.FindPath(node, 22,new ArrayList(),new ArrayList());
     }
 
     @Test
     public void test02(){
-        TreeNode node = new TreeNode(10);
-        node.left = new TreeNode(5);
-        node.right = new TreeNode(12);
-        node.left.left = new TreeNode(4);
-        node.left.right = new TreeNode(7);
-        ArrayList<ArrayList<Integer>> arrayLists = NiuKe.FindPath(node, 22);
-        for (int i = 0; i < arrayLists.size(); i++) {
-            for(int j = 0;j < arrayLists.get(i).size();j++){
-                int res = arrayLists.get(i).get(j);
-                System.out.print(res + " ");
-            }
-            System.out.println();
-        }
+
     }
 
+    @Test
+    public void test03(){
+        RandomListNode randomListNode = new RandomListNode(1);
+        RandomListNode tail = randomListNode;
+        for(int i = 2;i <= 5;i++){
+            tail.next = new RandomListNode(i);
+            tail.random = new RandomListNode(i+1);
+            tail = tail.next;
+        }
+        RandomListNode clone = NiuKe.Clone(randomListNode);
+        while (clone != null){
+            System.out.println(clone.label);
+            if(clone.random != null)System.out.println(clone.random.label);
+            clone = clone.next;
+        }
+    }
 }
