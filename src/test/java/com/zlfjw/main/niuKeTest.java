@@ -38,4 +38,12 @@ public class niuKeTest {
             clone = clone.next;
         }
     }
+
+    @Test
+    public void test04(){
+        ArrayList<String> res = NiuKe.Permutation("aa");
+        res.forEach(s->{
+            System.out.println(s);
+        });
+    }
 }

@@ -3,6 +3,7 @@ package com.zlfjw.main;
 import com.zlfjw.constant.RandomListNode;
 import com.zlfjw.constant.TreeNode;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class NiuKe {
     public static void FindPath(TreeNode root, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> path) {
@@ -51,5 +52,32 @@ public class NiuKe {
             pHead = pHead.next;
         }
         return node;
+    }
+
+    public static ArrayList<String> Permutation(String str) {
+        StringBuffer path = new StringBuffer();
+        TreeSet<String> res = new TreeSet<>();
+        ArrayList<String> result = new ArrayList<>();
+        boolean[] used = new boolean[str.length()];
+        backtrace(str,path,res,used);
+        result.addAll(res);
+        return result;
+    }
+
+    private static void backtrace(String str, StringBuffer path, TreeSet<String> res, boolean[] used) {
+        if(path.length() == str.length()){
+            res.add(path.toString());
+            return;
+        }
+        for(int i = 0;i < str.length();i++){
+            if(used[i]){
+                continue;
+            }
+            path.append(str.charAt(i));
+            used[i] = true;
+            backtrace(str,path,res, used);
+            path.deleteCharAt(path.length()-1);
+            used[i] = false;
+        }
     }
 }
