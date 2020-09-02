@@ -46,4 +46,14 @@ public class niuKeTest {
             System.out.println(s);
         });
     }
+
+    @Test
+    public void test05(){
+        String str1 = "123";
+        String str2 = "321";
+        int num1 = Integer.valueOf(str1+str2);
+        int num2 = Integer.valueOf(str2+str1);
+        System.out.println(num1);
+        System.out.println(num2);
+    }
 }

@@ -3,10 +3,8 @@ package com.zlfjw.main;
 import com.zlfjw.constant.ListNode;
 import com.zlfjw.constant.RandomListNode;
 import com.zlfjw.constant.TreeNode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeSet;
+
+import java.util.*;
 
 public class NiuKe {
     public static void FindPath(TreeNode root, int target, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> path) {
@@ -116,5 +114,27 @@ public class NiuKe {
             }
         }
         return root;
+    }
+
+    private class MyComparator implements Comparator<Integer>{
+
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            String str1 = o1  + "";
+            String str2 = o2 + "";
+            int num1 = Integer.valueOf(str1 + str2);
+            int num2 = Integer.valueOf(str2 + str1);
+            return num1 - num2;
+        }
+    }
+
+    public void PrintMinNumber(Integer[] nums){
+        MyComparator myComparator = new MyComparator();
+        Arrays.sort(nums,myComparator);
+        StringBuffer buffer = new StringBuffer();
+        for (int i = 0; i < nums.length; i++) {
+            buffer.append(nums[i]);
+        }
+        System.out.println(buffer.toString());
     }
 }
