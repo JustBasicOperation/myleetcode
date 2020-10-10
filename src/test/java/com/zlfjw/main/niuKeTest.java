@@ -56,4 +56,13 @@ public class niuKeTest {
         System.out.println(num1);
         System.out.println(num2);
     }
+
+    @Test
+    public void test06(){
+        String str = "12:123:1234";
+        String[] split = str.split(":");
+        for (int i = 0; i < split.length; i++) {
+            System.out.println(split[i]);
+        }
+    }
 }
