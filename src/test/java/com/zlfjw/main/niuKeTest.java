@@ -5,6 +5,7 @@ import com.zlfjw.constant.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class niuKeTest {
     @Test
@@ -64,5 +65,26 @@ public class niuKeTest {
         for (int i = 0; i < split.length; i++) {
             System.out.println(split[i]);
         }
+    }
+
+    @Test
+    public void test07(){
+        HashMap<String, Long> map = new HashMap<>();
+        map.put("zlf",100L);
+        map.put("zlf",200L);
+        Long zlf = map.get("zlf");
+        zlf += 100;
+        map.put("zlf",zlf);
+//        map.replace("zlf",zlf);
+        map.entrySet().forEach(entry->{
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        });
+    }
+
+    @Test
+    public void test08(){
+        Long l = 0L;
+        l = 100L;
+        System.out.println(l);
     }
 }

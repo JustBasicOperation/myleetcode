@@ -5,23 +5,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        int x = in.nextInt();
         int m = in.nextInt();
-        long sum = 0;
-        int x = (int) (1e9+7);
-        for(int i = 0;i <= n;i++){
-            sum += ((multi(n,i)/multi(i,i)) * Math.pow(m,i))%x;
-        }
-        System.out.println(sum);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Long.MAX_VALUE);
+        int n = in.nextInt();
+        escape(x,m,n);
     }
-    public static long multi(int x,int y){
-        long res = 1;
-        for(long i = x;i > x-y;i--){
-            res *= i;
+
+    public static void escape(int x,int m,int n){
+        int count = 0;
+        int start = 0;
+        while(true){
+            if(start == x){
+                break;
+            } else if(start > x){
+                start -= n;
+                count++;
+            } else {
+                start += m;
+                count++;
+            }
         }
-//        System.out.println(res);
-        return res;
+        System.out.println(count);
     }
 }

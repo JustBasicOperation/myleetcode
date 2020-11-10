@@ -197,14 +197,14 @@ public class LeetCodeTest {
         System.out.println(s);
     }
 
-    @Test
-    public void test23(){
-        Main.multi(3,3);
-        int a = (int) (1e9+7);
-        int b = Integer.MAX_VALUE;
-        System.out.println(b%a);
-        System.out.println(a);
-    }
+//    @Test
+//    public void test23(){
+//        Main.multi(3,3);
+//        int a = (int) (1e9+7);
+//        int b = Integer.MAX_VALUE;
+//        System.out.println(b%a);
+//        System.out.println(a);
+//    }
 
     @Test
     public void test24(){
